@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Credit Card Animation | @coding.stella</title>
   <link rel="stylesheet" href="https://public.codepenassets.com/css/reset-2.0.min.css">
-<link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style.css">
 
 </head>
 <body>
@@ -16,16 +16,15 @@
           <div class="card-item__side -front">
             <div class="card-item__focus" v-bind:class="{'-active' : focusElementStyle }" v-bind:style="focusElementStyle" ref="focusElement"></div>
             <div class="card-item__cover">
-              <img
-              v-bind:src="'./assets/images/' + currentCardBackground + '.jpeg'" class="card-item__bg">
+              <img v-if="currentCardBackground" v-bind:src="'./' + currentCardBackground" class="card-item__bg">
             </div>
             
             <div class="card-item__wrapper">
               <div class="card-item__top">
-                <img src="./assets/images/chip.png" class="card-item__chip">
+                <img src="./chip.png" class="card-item__chip">
                 <div class="card-item__type">
                   <transition name="slide-fade-up">
-                    <img v-bind:src="'./assets/images/' + getCardType + '.png'" v-if="getCardType" v-bind:key="getCardType" alt="" class="card-item__typeImg">
+                    <img v-bind:src="'./' + getCardType + '.png'" v-if="getCardType" v-bind:key="getCardType" alt="" class="card-item__typeImg">
                   </transition>
                 </div>
               </div>
@@ -107,8 +106,7 @@
           </div>
           <div class="card-item__side -back">
             <div class="card-item__cover">
-              <img
-              v-bind:src="'./assets/images/' + currentCardBackground + '.jpeg'" class="card-item__bg">
+              <img v-if="currentCardBackground" v-bind:src="'./' + currentCardBackground" class="card-item__bg">
             </div>
             <div class="card-item__band"></div>
             <div class="card-item__cvv">
@@ -120,7 +118,7 @@
 
               </div>
                 <div class="card-item__type">
-                    <img v-bind:src="'./assets/images/' + getCardType + '.png'" v-if="getCardType" class="card-item__typeImg">
+                    <img v-bind:src="'./' + getCardType + '.png'" v-if="getCardType" class="card-item__typeImg">
                 </div>
             </div>
           </div>
@@ -170,7 +168,8 @@
   </div>
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
-<script src='https://unpkg.com/vue-the-mask@0.11.1/dist/vue-the-mask.js'></script><script  src="./script.js"></script>
+  <script src='https://unpkg.com/vue-the-mask@0.11.1/dist/vue-the-mask.js'></script>
+  <script  src="./script.js"></script>
 
 </body>
 </html>
